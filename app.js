@@ -23,7 +23,7 @@ var q = new queue(
   function(input, cb) {
     input(cb);
   },
-  { afterProcessDelay: 1000 * 60 *5 }
+  { afterProcessDelay: 1000 * 60 }
 );
 
 var dif = 0;
