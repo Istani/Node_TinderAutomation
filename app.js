@@ -5,7 +5,7 @@ console.log(software);
 console.log("===");
 
 const fs = require('fs');
-var envpath = __dirname + ".env";
+var envpath = __dirname + "/.env";
 var config = require("dotenv").config({ path: envpath });
 var config_example = "";
 if (fs.existsSync(".env")) {
