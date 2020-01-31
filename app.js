@@ -2,7 +2,7 @@ process.chdir(__dirname);
 const package_info = require("./package.json");
 var software = package_info.name + " (V " + package_info.version + ")";
 console.log(software);
-console.log("===");
+console.log("=".repeat(software.length));
 
 const fs = require('fs');
 var envpath = __dirname + "/.env";
@@ -218,7 +218,6 @@ async function set_likes(client, cb) {
       set_likes(client, cb);
     });
   }
-  data();
   console.log("Send Likes Ende");
   cb();
 }
@@ -249,33 +248,5 @@ async function remove_file(name) {
     }
   } catch (e) {
     console.error(e);
-  }
-}
-
-async function data() {
-  try {
-    var fs = require("fs");
-    profiles = [];
-    var dirname = "tmp/";
-    fs.readdir(dirname, function(err, filenames) {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      filenames.forEach(function(filename) {
-        if (filename.startsWith("P_")) {
-          fs.readFile(dirname + filename, "utf-8", function(err, content) {
-            if (err) {
-              console.error(err);
-              return;
-            }
-            profiles.push(JSON.parse(content));
-          });
-        }
-      });
-    });
-  } catch (e) {
-    console.error(e);
-    process.exit(1);
   }
 }
