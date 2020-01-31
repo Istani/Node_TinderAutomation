@@ -1,0 +1,17 @@
+{
+  "name": "tinder_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-queue": "^3.8.10",
+    "dotenv": "^8.2.0",
+    "tinder-client": "4.1.1"
+  }
+}
