@@ -4,7 +4,7 @@ var software = package_info.name + " (V " + package_info.version + ")";
 console.log(software);
 console.log("=".repeat(software.length));
 
-const fs = require('fs');
+const fs = require("fs");
 var envpath = __dirname + "/.env";
 var config = require("dotenv").config({ path: envpath });
 var config_example = "";
@@ -37,6 +37,7 @@ try {
 } catch (e) {}
 
 async function main() {
+  console.log("Main Start");
   try {
     const client = await tc.createClientFromFacebookLogin({
       emailAddress: process.env.FACEBOOK_LOGIN,
@@ -55,7 +56,7 @@ async function main() {
 }
 main();
 
-function NeustartUndSo(Zeit = 5) {
+function NeustartUndSo(Zeit = 1) {
   console.log(new Date(), "Restart in " + Zeit + " Min!");
   setTimeout(() => {
     dif = 0;
@@ -200,9 +201,7 @@ async function set_likes(client, cb) {
       set_next(client, cb);
     });
 
-    console.log(
-      "Break Until" + new Date(resp.rate_limited_until) + ":" + d + "Sec"
-    );
+    console.log("Break Until" + new Date(resp.rate_limited_until) + ":" + d + "Sec");
     if (save == true) {
       try {
         console.log("Send Likes Ende");
