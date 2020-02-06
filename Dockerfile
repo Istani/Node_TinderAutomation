@@ -2,7 +2,7 @@ FROM buildkite/puppeteer
 
 #Defaults
 #FROM node:latest
-RUN  apt-get update
+#RUN  apt-get update
 
 #Puppeteer First Try
 #RUN apt-get install -y wget --no-install-recommends
