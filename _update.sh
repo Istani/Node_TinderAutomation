@@ -1,0 +1,2 @@
+git pull
+docker container restart tinder_automation
