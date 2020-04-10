@@ -1,4 +1,4 @@
-FROM buildkite/puppeteer
+FROM matosama/puppeteer
 
 #Defaults
 #FROM node:latest
